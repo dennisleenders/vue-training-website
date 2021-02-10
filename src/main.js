@@ -1,9 +1,17 @@
 import Vue from 'vue'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
 import App from './App.vue'
 import router from './router'
 import store from './store'
 
 Vue.config.productionTip = false
+
+// Base file for scss, includes reset and variables //
+import '@/assets/scss/main.scss'
+
+Vue.use(VueAxios, axios)
 
 new Vue({
   router,

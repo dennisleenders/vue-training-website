@@ -1,32 +1,53 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <nav class="nav">
+      <img class="logo" src="@/assets/logo.svg" alt="LiveWall">
+      <div class="link-holder">
+        <router-link to="/">Deelnemers</router-link>
+        <router-link to="/upload">Upload</router-link>
+      </div>
+    </nav>
+    <div class="background-texture"></div>
     <router-view/>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+<style lang="scss" scoped>
+  .nav {
+    display:flex;
+    padding: absolute;
+    top:0;
+    left:0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255,165,0,1);
+    padding: 10px 20px;
+    .logo {
+      width:25px;
+    }
+    .link-holder {
+      a {
+        font-size: 16px;
+        color:black;
+        text-decoration: none;
+        margin-right: 14px;
+        text-transform: uppercase;
+        &:last-child {
+          margin: 0;
+        }
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
-}
+
+  .background-texture {
+    height: 200px;
+    width:100%;
+    background-image: url('./assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+  }
 </style>
